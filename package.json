@@ -1,0 +1,10 @@
+{
+  "name": "micro-rest",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Tiago Henriques <trinosauro@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "micro": "^6.1.0"
+  }
+}
