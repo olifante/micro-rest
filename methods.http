@@ -1,0 +1,9 @@
+http://localhost:3000
+GET http://localhost:3000
+POST http://localhost:3000
+PUT http://localhost:3000
+PATCH http://localhost:3000
+DELETE http://localhost:3000
+# if using Visual Studio Code, install REST Client extension
+# select one of the lines above
+# and press command+alt+R to send request
