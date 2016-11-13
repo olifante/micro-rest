@@ -1,14 +1,6 @@
 const { send } = require('micro')
 
-const actions = {
-  'GET': doGet,
-  'POST': doPost,
-  'PUT': doMethodNotFound,
-  'PATCH': doMethodNotFound,
-  'DELETE': doMethodNotFound,
-}
-
-module.exports = async function (req, res) {
+module.exports = async (req, res) => {
   const action = actions[req.method]
 
   if (!action) {
@@ -18,14 +10,23 @@ module.exports = async function (req, res) {
   return action(req, res)
 }
 
-async function doGet(req, res) {
+doGet = async (req, res) => {
   return send(res, 200, { 'action': 'GET' })
 }
 
-async function doPost(req, res) {
+doPost = async (req, res) => {
   return send(res, 200, { 'action': 'POST' })
 }
 
-async function doMethodNotFound(req, res) {
+doMethodNotFound = async (req, res) => {
   return send(res, 404, { 'notFound': 'Endpoint only accepts GET and POST methods' })
 }
+
+const actions = {
+  'GET': doGet,
+  'POST': doPost,
+  'PUT': doMethodNotFound,
+  'PATCH': doMethodNotFound,
+  'DELETE': doMethodNotFound,
+}
+
